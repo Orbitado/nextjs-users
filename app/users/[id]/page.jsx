@@ -1,4 +1,5 @@
 import getUsersById from "@/app/utils/getUsersById";
+import ButtonId from "@/components/ButtonId";
 const UsersById = async ({ params: { id } }) => {
   const user = await getUsersById(id);
 
@@ -13,6 +14,7 @@ const UsersById = async ({ params: { id } }) => {
         {user.first_name} {user.last_name}
       </h1>
       <p>Email: {user.email}</p>
+      <ButtonId id={user.id} />
     </div>
   );
 };
